@@ -1,22 +1,18 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <id>Serilog.Sinks.Redis</id>
+    <id>$id$</id>
     <version>$version$</version>
-    <authors>Serilog Contributors</authors>
-    <description>A Redis sink for Serilog.</description>
-    <language>en-US</language>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
     <projectUrl>http://serilog.net</projectUrl>
     <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
     <iconUrl>http://serilog.net/images/serilog-sink-nuget.png</iconUrl>
     <tags>serilog logging redis error</tags>
-    <dependencies>
-      <dependency id="Serilog" version="2.1.0" />
-      <dependency id="Serilog.Sinks.PeriodicBatching" version="2.0.0" />
-      <dependency id="StackExchange.Redis" version="2.0.0" />
-    </dependencies>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <releaseNotes>Initial release.</releaseNotes>
+    <copyright>Copyright 2016</copyright>
   </metadata>
-  <files>
-    <file src="bin\Release\Serilog.Sinks.RabbitMQ.dll" target="lib\net45" />  
-  </files>
 </package>
