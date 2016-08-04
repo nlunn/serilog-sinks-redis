@@ -11,6 +11,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{47C3689B-E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serilog.Sinks.Redis.Test", "test\Serilog.Sinks.Redis.Test\Serilog.Sinks.Redis.Test.csproj", "{0A161EC1-32D4-43FE-A5C8-7DC41E2ABAA7}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "assets", "assets", "{4DB38F60-ABD9-4C41-8391-9EA46260104B}"
+	ProjectSection(SolutionItems) = preProject
+		assets\CommonAssemblyInfo.cs = assets\CommonAssemblyInfo.cs
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
