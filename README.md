@@ -1,6 +1,6 @@
 # serilog-sinks-redis
 
-[![NuGet Version](http://img.shields.io/nuget/v/Serilog.Sinks.EventLog.svg?style=flat)](https://www.nuget.org/packages/Serilog.Sinks.Redis/)
+[![NuGet Version](http://img.shields.io/nuget/v/Serilog.Sinks.Redis.svg?style=flat)](https://www.nuget.org/packages/Serilog.Sinks.Redis/)
 
 A Serilog sink that writes events a Redis channel.
 
