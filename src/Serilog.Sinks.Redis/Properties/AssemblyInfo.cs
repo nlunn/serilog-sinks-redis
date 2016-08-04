@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 
 [assembly: AssemblyTitle( "Serilog.Sinks.Redis" )]
-[assembly: AssemblyDescription( "zdx" )]
+[assembly: AssemblyDescription( "Redis sink for Serilog" )]
 [assembly: AssemblyCopyright( "Copyright © Serilog Contributors 2016" )]
-[assembly: AssemblyCompany( "nilu@danskebank.dk" )]
+[assembly: AssemblyCompany( "nilu@danskebank.dk, udb@danskebank.dk" )]
