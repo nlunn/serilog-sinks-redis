@@ -11,9 +11,9 @@ namespace Serilog.Sinks.Redis.Sinks.Redis
     private readonly ITextFormatter _formatter;
     private readonly RedisClient _client;
 
-    public RedisSink( RedisConfiguration configuration ) : base( configuration.BatchSizeLimit, configuration.Period )
+    public RedisSink( RedisConfiguration configuration, ITextFormatter formatter ) : base( configuration.BatchSizeLimit, configuration.Period )
     {
-      _formatter = new RedisJsonFormatter( configuration );
+      _formatter = formatter;
       _client = new RedisClient( configuration );
     }
 

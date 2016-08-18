@@ -74,7 +74,9 @@
     <Compile Include="RedisJsonFormatterShould.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="RedisJsonFormatterShould.MatchFormat.approved.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

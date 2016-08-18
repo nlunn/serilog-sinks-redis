@@ -5,15 +5,12 @@ namespace Serilog.Sinks.Redis.Sinks.Redis
 {
   public class RedisClient
   {
-    private RedisConfiguration _configuration;
-    private ConnectionMultiplexer _redis;
-    private ISubscriber _subscriber;
+    private readonly ISubscriber _subscriber;
 
     public RedisClient( RedisConfiguration configuration )
     {
-      _configuration = configuration;
-      _redis = ConnectionMultiplexer.Connect( _configuration.Host );
-      _subscriber = _redis.GetSubscriber();
+      var redis = ConnectionMultiplexer.Connect( configuration.Host );
+      _subscriber = redis.GetSubscriber();
     }
 
     public void Publish( string message )
