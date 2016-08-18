@@ -7,6 +7,7 @@ namespace Serilog.Sinks.Redis.Sinks.Redis
   {
     public int BatchSizeLimit = 50;
     public TimeSpan Period = TimeSpan.FromSeconds( 2 );
+    public string PropFieldName = "Fields";
     public string Host;
     public readonly Dictionary<string, string> MetaProperties = new Dictionary<string, string>();
   }

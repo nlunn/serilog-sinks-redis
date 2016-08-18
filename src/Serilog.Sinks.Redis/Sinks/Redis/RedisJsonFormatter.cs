@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using Serilog.Events;
 using Serilog.Formatting;
@@ -10,11 +11,13 @@ namespace Serilog.Sinks.Redis.Sinks.Redis
   {
     private readonly RedisConfiguration _config;
     private readonly string _closingDelimiter;
+    private string _propFieldName;
 
     public RedisJsonFormatter( RedisConfiguration config ) : base( true )
     {
       _config = config;
       _closingDelimiter = Environment.NewLine;
+      _propFieldName = config.PropFieldName;
     }
 
     public new void Format( LogEvent logEvent, TextWriter output )
@@ -31,5 +34,13 @@ namespace Serilog.Sinks.Redis.Sinks.Redis
       output.Write( "}" );
       output.Write( _closingDelimiter );
     }
+
+    protected override void WriteProperties( IReadOnlyDictionary<string, LogEventPropertyValue> properties, TextWriter output )
+    {
+      output.Write( ",\"{0}\":{{", _propFieldName );
+      WritePropertiesValues( properties, output );
+      output.Write( "}" );
+    }
+
   }
 }
