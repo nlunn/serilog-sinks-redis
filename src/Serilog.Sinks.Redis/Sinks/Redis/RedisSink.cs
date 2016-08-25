@@ -1,31 +1,22 @@
-﻿using System.Collections.Generic;
-using System.IO;
+﻿using System.IO;
+using Serilog.Core;
 using Serilog.Events;
 using Serilog.Formatting;
-using Serilog.Sinks.PeriodicBatching;
 
 namespace Serilog.Sinks.Redis.Sinks.Redis
 {
-  public class RedisSink : PeriodicBatchingSink
+  public class RedisSink : ILogEventSink
   {
     private readonly ITextFormatter _formatter;
     private readonly RedisClient _client;
 
-    public RedisSink( RedisConfiguration configuration, ITextFormatter formatter ) : base( configuration.BatchSizeLimit, configuration.Period )
+    public RedisSink( RedisConfiguration configuration, ITextFormatter formatter )
     {
       _formatter = formatter;
       _client = new RedisClient( configuration );
     }
 
-    protected override void EmitBatch( IEnumerable<LogEvent> events )
-    {
-      foreach ( var logEvent in events )
-      {
-        Emit( logEvent );
-      }
-    }
-
-    public new void Emit( LogEvent logEvent )
+    public void Emit( LogEvent logEvent )
     {
       var sw = new StringWriter();
       _formatter.Format( logEvent, sw );
