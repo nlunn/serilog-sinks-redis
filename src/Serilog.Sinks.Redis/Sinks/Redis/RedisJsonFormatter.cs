@@ -4,7 +4,7 @@ using Serilog.Events;
 using Serilog.Formatting;
 using Serilog.Formatting.Json;
 
-namespace Serilog.Sinks.Redis.Sinks.Redis
+namespace Serilog.Sinks.Redis
 {
   public class RedisJsonFormatter : JsonFormatter, ITextFormatter
   {

@@ -3,7 +3,7 @@ using Serilog.Core;
 using Serilog.Events;
 using Serilog.Formatting;
 
-namespace Serilog.Sinks.Redis.Sinks.Redis
+namespace Serilog.Sinks.Redis
 {
   public class RedisSink : ILogEventSink
   {

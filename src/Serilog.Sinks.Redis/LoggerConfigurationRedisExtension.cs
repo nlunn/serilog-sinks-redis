@@ -1,9 +1,9 @@
 ﻿using System;
 using Serilog.Configuration;
 using Serilog.Formatting;
-using Serilog.Sinks.Redis.Sinks.Redis;
+using Serilog.Sinks.Redis;
 
-namespace Serilog.Sinks.Redis
+namespace Serilog
 {
   public static class LoggerConfigurationRedisExtension
   {

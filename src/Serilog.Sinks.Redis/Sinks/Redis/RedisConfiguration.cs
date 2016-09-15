@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Serilog.Sinks.Redis.Sinks.Redis
+namespace Serilog.Sinks.Redis
 {
   public class RedisConfiguration
   {
