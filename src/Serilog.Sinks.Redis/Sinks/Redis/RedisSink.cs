@@ -16,7 +16,7 @@ namespace Serilog.Sinks.Redis
       _client = new RedisClient( configuration );
     }
 
-    public void Emit( LogEvent logEvent )
+    public virtual void Emit( LogEvent logEvent )
     {
       var sw = new StringWriter();
       _formatter.Format( logEvent, sw );
