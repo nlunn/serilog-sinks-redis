@@ -1,6 +1,6 @@
 param(
     [String] $majorMinor = "2.0",  # 2.0
-    [String] $patch = "5",         # $env:APPVEYOR_BUILD_VERSION
+    [String] $patch = "6",         # $env:APPVEYOR_BUILD_VERSION
     [String] $customLogger = "",   # C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll
     [Switch] $notouch,
     [String] $sln                  # e.g serilog-sink-name
