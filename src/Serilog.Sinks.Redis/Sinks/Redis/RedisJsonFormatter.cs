@@ -11,7 +11,7 @@ namespace Serilog.Sinks.Redis
     private readonly RedisConfiguration _config;
     private readonly string _closingDelimiter;
 
-    public RedisJsonFormatter( RedisConfiguration config ) : base( true )
+    public RedisJsonFormatter( RedisConfiguration config ) : base( true, renderMessage: true )
     {
       _config = config;
       _closingDelimiter = Environment.NewLine;
