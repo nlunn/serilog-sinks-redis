@@ -6,27 +6,28 @@ namespace Serilog.Sinks.Redis
   public class RedisClient
   {
     private readonly RedisConfiguration _configuration;
-    private ISubscriber _subscriber;
-    private readonly object _subscriberLock = new object();
+    private readonly object _databaseLock = new object();
+    private volatile IDatabase _database;
 
-    private ISubscriber Subscriber
+    private IDatabase Database
     {
       get
       {
-        if( _subscriber != null ) return _subscriber;
+        if ( _database != null ) return _database;
 
-        lock( _subscriberLock )
+        lock ( _databaseLock )
         {
-          if( _subscriber == null )
+          if ( _database == null )
           {
             var redis = ConnectionMultiplexer.Connect( _configuration.Host );
-            _subscriber = redis.GetSubscriber();
+            _database = redis.GetDatabase();
           }
         }
 
-        return _subscriber;
+        return _database;
       }
     }
+
 
     public RedisClient( RedisConfiguration configuration )
     {
@@ -35,8 +36,7 @@ namespace Serilog.Sinks.Redis
 
     public void Publish( string message )
     {
-      var key = Guid.NewGuid().ToString();
-      Subscriber.Publish( key, message );
+      Database.ListRightPush( _configuration.Key, message );
     }
   }
 }

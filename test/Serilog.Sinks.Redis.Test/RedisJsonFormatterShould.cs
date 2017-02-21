@@ -6,6 +6,7 @@ using ApprovalTests.Reporters;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Serilog.Events;
 using Serilog.Parsing;
+using SerilogToElkExample;
 
 namespace Serilog.Sinks.Redis.Test
 {
@@ -21,7 +22,7 @@ namespace Serilog.Sinks.Redis.Test
 
       var config = new RedisConfiguration();
       config.MetaProperties.Add( "_index_name", "MyIndex" );
-      var formatter = new RedisJsonFormatter( config );
+      var formatter = new RedisCompactJsonFormatter( new FormatterConfiguration(), config );
       var template = new MessageTemplateParser().Parse( "{Song}++ @{Complex}" );
       var dt = new DateTimeOffset( 2001, 2, 3, 4, 5, 6, TimeSpan.Zero );
       var properties = new List<LogEventProperty> { new LogEventProperty("Song", new ScalarValue("New Macabre")) };

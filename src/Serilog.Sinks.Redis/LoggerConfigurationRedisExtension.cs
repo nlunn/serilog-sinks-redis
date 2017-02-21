@@ -2,6 +2,7 @@
 using Serilog.Configuration;
 using Serilog.Formatting;
 using Serilog.Sinks.Redis;
+using SerilogToElkExample;
 
 namespace Serilog
 {
@@ -13,7 +14,7 @@ namespace Serilog
       if( redisConfiguration == null ) throw new ArgumentNullException( nameof( redisConfiguration ) );
 
       // calls overloaded extension method
-      var f = formatter ?? new RedisJsonFormatter( redisConfiguration );
+      var f = formatter ?? new RedisCompactJsonFormatter( redisConfiguration.FormatterConfig, redisConfiguration );
       return loggerConfiguration.Sink( new RedisSink( redisConfiguration, f ) );
     }
   }

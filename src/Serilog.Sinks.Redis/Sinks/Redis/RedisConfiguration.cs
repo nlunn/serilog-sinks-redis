@@ -1,11 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using SerilogToElkExample;
 
 namespace Serilog.Sinks.Redis
 {
   public class RedisConfiguration
   {
-    public string Host;
-    public readonly Dictionary<string, string> MetaProperties = new Dictionary<string, string>();
+    public string Host { get; set; }
+    public Dictionary<string, string> MetaProperties { get; }
+    public IFormatterConfiguration FormatterConfig { get; set; }
+    public string Key { get; set; }
+
+    public RedisConfiguration()
+    {
+      FormatterConfig = new FormatterConfiguration();
+      MetaProperties = new Dictionary<string, string>();
+    }
   }
 }

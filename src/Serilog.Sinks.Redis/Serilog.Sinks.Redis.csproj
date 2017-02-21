@@ -34,6 +34,8 @@
   <ItemGroup>
     <Compile Include="LoggerConfigurationRedisExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sinks\Redis\FormatterConfiguration.cs" />
+    <Compile Include="Sinks\Redis\IFormatterConfiguration.cs" />
     <Compile Include="Sinks\Redis\RedisClient.cs" />
     <Compile Include="Sinks\Redis\RedisConfiguration.cs" />
     <Compile Include="Sinks\Redis\RedisJsonFormatter.cs" />
@@ -41,6 +43,7 @@
     <Compile Include="..\..\assets\CommonAssemblyInfo.cs">
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="Sinks\Redis\TextWriterExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
