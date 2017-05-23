@@ -1,9 +1,8 @@
-﻿{
-    "Timestamp": "2001-02-03T04:05:06.0000000+00:00",
-    "Level": "Information",
-    "MessageTemplate": "{Song}++ @{Complex}",
-    "Properties": {
-        "Song": "New Macabre"
-    },
-    "_index_name": "MyIndex"
+{
+    "@t": "2001-02-03T04:05:06.0000000Z",
+    "@mt": "{Song}++ @{Complex}",
+    "@m": "\"New Macabre\"++ @{Complex}",
+    "_index_name": "MyIndex",
+    "@l": "Information",
+    "Song": "New Macabre"
 }
