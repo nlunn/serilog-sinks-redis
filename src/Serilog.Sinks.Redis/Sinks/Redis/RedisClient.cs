@@ -1,42 +1,34 @@
-﻿using System;
+using System.Collections.Generic;
 using StackExchange.Redis;
 
 namespace Serilog.Sinks.Redis
 {
   public class RedisClient
   {
-    private readonly RedisConfiguration _configuration;
-    private readonly object _databaseLock = new object();
-    private volatile IDatabase _database;
+    private static readonly Dictionary<string, IDatabase> Databases = new Dictionary<string, IDatabase>();
+    private static readonly object RedisLock = new object();
 
-    private IDatabase Database
+    private readonly IDatabase _database;
+    private readonly string _key;
+
+    public RedisClient(RedisConfiguration configuration)
     {
-      get
+      if (!Databases.ContainsKey(configuration.Host))
       {
-        if ( _database != null ) return _database;
-
-        lock ( _databaseLock )
+        lock (RedisLock)
         {
-          if ( _database == null )
-          {
-            var redis = ConnectionMultiplexer.Connect( _configuration.Host );
-            _database = redis.GetDatabase();
-          }
+          if (!Databases.ContainsKey(configuration.Host))
+            Databases[configuration.Host] = ConnectionMultiplexer.Connect(configuration.Host).GetDatabase();
         }
-
-        return _database;
       }
-    }
 
-
-    public RedisClient( RedisConfiguration configuration )
-    {
-      _configuration = configuration;
+      _database = Databases[configuration.Host];
+      _key = configuration.Key;
     }
 
     public void Publish( string message )
     {
-      Database.ListRightPush( _configuration.Key, message );
+      _database.ListRightPush(_key, message );
     }
   }
 }
