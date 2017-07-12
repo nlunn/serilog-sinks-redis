@@ -9,7 +9,7 @@ A Serilog sink that writes events a Redis channel.
 
 ```csharp
 var config = new RedisConfiguration()
-config.Host = "elk-test.danskenet.net:6379"
+config.Host = "elk.example.net:6379"
 config.MetaProperties.Add( "_index_name", "MyElasticsearchIndex" );
 
 var logger = new LoggerConfiguration()

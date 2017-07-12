@@ -1,19 +1,26 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.15
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{1DD118BE-3C07-4115-A52F-88AEADE45C29}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serilog.Sinks.Redis", "src\Serilog.Sinks.Redis\Serilog.Sinks.Redis.csproj", "{5E4C19E8-2977-4DB4-BAC8-ACDD296A731D}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{47C3689B-E481-4FC2-AFE8-26C1D0274488}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serilog.Sinks.Redis.Test", "test\Serilog.Sinks.Redis.Test\Serilog.Sinks.Redis.Test.csproj", "{0A161EC1-32D4-43FE-A5C8-7DC41E2ABAA7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "assets", "assets", "{4DB38F60-ABD9-4C41-8391-9EA46260104B}"
 	ProjectSection(SolutionItems) = preProject
 		assets\CommonAssemblyInfo.cs = assets\CommonAssemblyInfo.cs
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Serilog.Sinks.Redis", "src\Serilog.Sinks.Redis\Serilog.Sinks.Redis.csproj", "{CB9D3360-889E-4B33-813A-3F0F42DE8B3A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Serilog.Sinks.Redis.Test", "test\Serilog.Sinks.Redis.Test\Serilog.Sinks.Redis.Test.csproj", "{C2C64366-085F-453A-85E1-BD927EB7DE08}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "solutionitems", "solutionitems", "{01BB3850-F4D1-47E6-AD32-9D9321880FE7}"
+	ProjectSection(SolutionItems) = preProject
+		Build.ps1 = Build.ps1
+		LICENSE = LICENSE
+		README.md = README.md
 	EndProjectSection
 EndProject
 Global
@@ -22,20 +29,20 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{5E4C19E8-2977-4DB4-BAC8-ACDD296A731D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5E4C19E8-2977-4DB4-BAC8-ACDD296A731D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5E4C19E8-2977-4DB4-BAC8-ACDD296A731D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5E4C19E8-2977-4DB4-BAC8-ACDD296A731D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0A161EC1-32D4-43FE-A5C8-7DC41E2ABAA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0A161EC1-32D4-43FE-A5C8-7DC41E2ABAA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0A161EC1-32D4-43FE-A5C8-7DC41E2ABAA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0A161EC1-32D4-43FE-A5C8-7DC41E2ABAA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB9D3360-889E-4B33-813A-3F0F42DE8B3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB9D3360-889E-4B33-813A-3F0F42DE8B3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB9D3360-889E-4B33-813A-3F0F42DE8B3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB9D3360-889E-4B33-813A-3F0F42DE8B3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2C64366-085F-453A-85E1-BD927EB7DE08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2C64366-085F-453A-85E1-BD927EB7DE08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2C64366-085F-453A-85E1-BD927EB7DE08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2C64366-085F-453A-85E1-BD927EB7DE08}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{5E4C19E8-2977-4DB4-BAC8-ACDD296A731D} = {1DD118BE-3C07-4115-A52F-88AEADE45C29}
-		{0A161EC1-32D4-43FE-A5C8-7DC41E2ABAA7} = {47C3689B-E481-4FC2-AFE8-26C1D0274488}
+		{CB9D3360-889E-4B33-813A-3F0F42DE8B3A} = {1DD118BE-3C07-4115-A52F-88AEADE45C29}
+		{C2C64366-085F-453A-85E1-BD927EB7DE08} = {47C3689B-E481-4FC2-AFE8-26C1D0274488}
 	EndGlobalSection
 EndGlobal

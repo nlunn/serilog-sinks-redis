@@ -5,7 +5,7 @@ using Serilog.Events;
 using Serilog.Formatting.Json;
 using Serilog.Parsing;
 
-namespace SerilogToElkExample
+namespace Serilog.Sinks.Redis
 {
   internal static class TextWriterExtensions
   {

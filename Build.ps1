@@ -17,29 +17,29 @@ function Set-AssemblyVersions($informational, $assembly)
 
 function Install-NuGetPackages($solution)
 {
-    nuget restore $solution
+    dotnet restore $solution
 }
 
 function Invoke-MSBuild($solution, $customLogger)
 {
     if ($customLogger)
     {
-        msbuild "$solution" /verbosity:minimal /p:Configuration=Release /logger:"$customLogger"
+        dotnet build "$solution" /verbosity:minimal /p:Configuration=Release /logger:"$customLogger"
     }
     else
     {
-        msbuild "$solution" /verbosity:minimal /p:Configuration=Release
+        dotnet build "$solution" /verbosity:minimal /p:Configuration=Release
     }
 }
 
 function Invoke-NuGetPackProj($csproj)
 {
-    nuget pack -Prop Configuration=Release -Symbols $csproj
+    dotnet pack /p:Configuration=Release --include-symbols $csproj
 }
 
 function Invoke-NuGetPackSpec($nuspec, $version)
 {
-    nuget pack $nuspec -Version $version -OutputDirectory ..\..\
+    dotnet pack $nuspec -Version $version -OutputDirectory ..\..\
 }
 
 function Invoke-NuGetPack($version)

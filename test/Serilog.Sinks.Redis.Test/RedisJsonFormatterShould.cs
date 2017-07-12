@@ -6,7 +6,7 @@ using ApprovalTests.Reporters;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Serilog.Events;
 using Serilog.Parsing;
-using SerilogToElkExample;
+
 
 namespace Serilog.Sinks.Redis.Test
 {

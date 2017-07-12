@@ -2,7 +2,6 @@
 using Serilog.Configuration;
 using Serilog.Formatting;
 using Serilog.Sinks.Redis;
-using SerilogToElkExample;
 
 namespace Serilog
 {

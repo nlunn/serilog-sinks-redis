@@ -1,4 +1,5 @@
-namespace SerilogToElkExample
+
+namespace Serilog.Sinks.Redis
 {
   public class FormatterConfiguration : IFormatterConfiguration
   {
