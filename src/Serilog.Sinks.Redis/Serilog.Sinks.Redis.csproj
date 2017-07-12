@@ -2,6 +2,15 @@
 
   <PropertyGroup>
     <TargetFramework>net45</TargetFramework>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\Debug\net45\Serilog.Sinks.Redis.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>bin\Release\net45\Serilog.Sinks.Redis.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
