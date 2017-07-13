@@ -10,7 +10,7 @@ if(Test-Path .\artifacts) {
 & dotnet restore --no-cache
 
 $branch = @{ $true = $env:APPVEYOR_REPO_BRANCH; $false = $(git symbolic-ref --short -q HEAD) }[$env:APPVEYOR_REPO_BRANCH -ne $NULL];
-$revision = @{ $true = "{0:00000}" -f [convert]::ToInt32("0" + $env:APPVEYOR_BUILD_NUMBER, 10); $false = "local" }[$env:APPVEYOR_BUILD_NUMBER -ne $NULL];
+$revision = @{ $true = "{0:00000}" -f [convert]::ToInt32("0" + $env:APPVEYOR_BUILD_VERSION, 10); $false = "local" }[$env:APPVEYOR_BUILD_NUMBER -ne $NULL];
 $suffix = @{ $true = ""; $false = "$($branch.Substring(0, [math]::Min(10,$branch.Length)))-$revision"}[$branch -eq "master" -and $revision -ne "local"]
 $commitHash = $(git rev-parse --short HEAD)
 $buildSuffix = @{ $true = "$($suffix)-$($commitHash)"; $false = "$($branch)-$($commitHash)" }[$suffix -ne ""]
@@ -23,8 +23,8 @@ foreach ($src in ls src/*) {
 
 	echo "build: Packaging project in $src"
 
-    & dotnet build -c Release /p:Version=$env:APPVEYOR_BUILD_NUMBER --version-suffix=$buildSuffix
-    & dotnet pack -c Release /p:Version=$env:APPVEYOR_BUILD_NUMBER --include-symbols -o ..\..\artifacts --version-suffix=$suffix --no-build
+    & dotnet build -c Release /p:Version=$env:APPVEYOR_BUILD_VERSION --version-suffix=$buildSuffix
+    & dotnet pack -c Release /p:Version=$env:APPVEYOR_BUILD_VERSION --include-symbols -o ..\..\artifacts --version-suffix=$suffix --no-build
     if($LASTEXITCODE -ne 0) { exit 1 }    
 
     Pop-Location
