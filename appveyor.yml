@@ -1,0 +1,8 @@
+version: 2.0.{build}
+image: Visual Studio 2017
+configuration: Release
+build_script:
+- ps: ./Build.ps1
+artifacts:
+- path: artifacts/Serilog.*.nupkg
+  name: Nuget

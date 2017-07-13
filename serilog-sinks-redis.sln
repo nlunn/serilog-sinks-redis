@@ -7,17 +7,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{1DD118BE-3C0
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{47C3689B-E481-4FC2-AFE8-26C1D0274488}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "assets", "assets", "{4DB38F60-ABD9-4C41-8391-9EA46260104B}"
-	ProjectSection(SolutionItems) = preProject
-		assets\CommonAssemblyInfo.cs = assets\CommonAssemblyInfo.cs
-	EndProjectSection
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Serilog.Sinks.Redis", "src\Serilog.Sinks.Redis\Serilog.Sinks.Redis.csproj", "{CB9D3360-889E-4B33-813A-3F0F42DE8B3A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Serilog.Sinks.Redis.Test", "test\Serilog.Sinks.Redis.Test\Serilog.Sinks.Redis.Test.csproj", "{C2C64366-085F-453A-85E1-BD927EB7DE08}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "solutionitems", "solutionitems", "{01BB3850-F4D1-47E6-AD32-9D9321880FE7}"
 	ProjectSection(SolutionItems) = preProject
+		appveyor.yml = appveyor.yml
 		Build.ps1 = Build.ps1
 		LICENSE = LICENSE
 		README.md = README.md
