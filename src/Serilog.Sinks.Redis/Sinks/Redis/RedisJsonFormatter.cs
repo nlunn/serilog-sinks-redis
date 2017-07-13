@@ -3,9 +3,8 @@ using System.IO;
 using Serilog.Events;
 using Serilog.Formatting;
 using Serilog.Formatting.Json;
-using Serilog.Sinks.Redis;
 
-namespace SerilogToElkExample
+namespace Serilog.Sinks.Redis
 {
   public class RedisCompactJsonFormatter : ITextFormatter
   {

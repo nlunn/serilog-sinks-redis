@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using SerilogToElkExample;
 
 namespace Serilog.Sinks.Redis
 {
