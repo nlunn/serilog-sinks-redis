@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using ApprovalTests;
-using ApprovalTests.Reporters;
+using Assent;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Serilog.Events;
 using Serilog.Parsing;
@@ -11,7 +10,6 @@ using Serilog.Parsing;
 namespace Serilog.Sinks.Redis.Test
 {
   [TestClass]
-  [UseReporter( typeof( DiffReporter ) )]
   public class RedisJsonFormatterShould
   {
     [TestMethod]
@@ -35,8 +33,7 @@ namespace Serilog.Sinks.Redis.Test
       stream.Position = 0;
       var reader = new StreamReader( stream );
       var result = reader.ReadToEnd();
-
-      Approvals.VerifyJson( result );
+      this.Assent(result);
     }
   }
 }
