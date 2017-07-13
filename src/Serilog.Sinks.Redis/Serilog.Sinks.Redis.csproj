@@ -3,6 +3,14 @@
   <PropertyGroup>
     <TargetFramework>net45</TargetFramework>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Authors>nilu@danskebank.dk, udb@danskebank.dk, jehe@danskebank.dk</Authors>
+    <Company>Serilog Contributors</Company>
+    <PackageLicenseUrl>http://www.apache.org/licenses/LICENSE-2.0</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/nlunn/serilog-sinks-redis</PackageProjectUrl>
+    <PackageIconUrl>http://serilog.net/images/serilog-sink-nuget.png</PackageIconUrl>
+    <Description>Redis sink for Serilog</Description>
+    <Copyright>Copyright 2017</Copyright>
+    <PackageTags>serilog logging redis</PackageTags>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
